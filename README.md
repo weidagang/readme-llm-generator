@@ -110,7 +110,7 @@ Then, run the script:
 
 ### 4. Run the Generator
 
-Another helper script simplifies generating the README.llm.
+Another helper script simplifies generating the `README.llm`.
 
 Make the script executable:
 
@@ -124,9 +124,10 @@ Run the script, passing the path to the repository you want to analyze:
 ./scripts/generate-readme-llm.sh /path/to/your/repo
 ```
 
-The output file, README.llm, will appear in the root of your target project directory (/path/to/your/repo).
+The output file, `README.llm`, will appear in the root of your target project directory (`/path/to/your/repo`).
 
-Manual Docker Commands (Alternative)
+#### Manual Docker Commands (Alternative)
+
 If you prefer not to use the scripts, you can run the Docker commands manually:
 
 Build:
