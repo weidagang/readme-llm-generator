@@ -7,9 +7,18 @@ The tool is packaged as a Docker image for portability and ease of use.
 ## ✨ Features
 
 -   Analyzes source code repositories to create a high-level summary.
--   Uses the Gemini API for code analysis.
+-   Leverages the Gemini API and its large context window for code analysis.
 -   Configurable to scan for specific file types (e.g., `.py`, `.ts`, `.java`).
 -   Generates language-specific output formats (e.g., Python `.pyi`, TypeScript `.d.ts`, Java `interface`).
+
+## ⚙️ How It Works
+
+The tool follows a simple workflow to analyze your code and generate README.llm:
+
+1.  **Code Parsing**: The Python script starts and recursively scans the `/app/repo` directory, finding all source files that match the configured extensions (e.g., `.py`, `.go`). The contents of all found files are read and concatenated into a single text block.
+2.  **Prompt Construction**: The script reads the `system_prompt.md` template and appends the aggregated source code, creating a complete and detailed prompt for the AI.
+3.  **Gemini API Call**: This final prompt is sent to the Gemini API for analysis.
+4.  **Output Generation**: The tool receives the generated summary from the API and writes it to a new file named `README.llm`.
 
 ## 📋 Requirements
 
